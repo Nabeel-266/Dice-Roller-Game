@@ -1,0 +1,326 @@
+/* --------------------------> For Media Query <-------------------------- */
+
+/* Smartphones Mobile Medium*/
+@media only screen and (max-width: 375px) {
+
+    .instruction{
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        padding: 5px 12px;
+        border: 2px solid var(--SecondaryColor02);
+    }
+
+    .Instructions{
+        width: 80%;
+        height: 80%;
+        padding: 0px 10px;
+    }
+    .Instructions .close{
+        padding: 4px 8px;
+        border-radius: 0px 6px 0px 8px;
+    }
+    .Instructions h2{
+        font-size: 1.8rem;
+    }
+    .Instructions ul{
+        font-size: 0.8rem;
+        line-height: 25px;
+    }
+    .Instructions p{
+        font-size: 1.1rem;
+    }
+    
+    .congratulation{
+        height: 40%;
+        width: 80%;
+    }
+    .congrats :nth-child(1){
+        font-size: 1.7rem;
+    }
+    .congrats :nth-child(2){
+        font-size: 2rem;
+    }
+    .congrats :nth-child(3){
+        font-size: 1.6rem;
+    }
+    .congrats :nth-child(4){
+        font-size: 1.2rem;
+    }
+    .congrats :nth-child(4):hover{
+        transform: scale(1.05);
+    }
+
+    .changeNameP1{
+        height: 35%;
+        width: 80%;
+    }
+    .changeNameP2{
+        height: 35%;
+        width: 80%;
+    }
+
+    .newGameBtn{
+        padding: 4px 14px;
+        border-radius: 6px 6px 0px 0px;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border: 2px solid #ff8352;
+    }
+    #gameArea{
+        width: 90%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .player1Info{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 15px 15px 0px 0px;
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.4)40%, rgba(255, 255, 255, 0.2) 100%);
+    }
+    .p1GainScore{
+        width: 20%;
+        height: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        top: 15%;
+    }
+    .gnScrHd1{
+        width: 90%;
+        height: 50%;
+    }
+    .gnScrHd1 h5{
+        font-size: 0.9rem;
+    }
+    .gnScrHd1 h5 span{
+        font-size: 1.3rem;
+    }
+    .gnScrValue1{
+        width: 60%;
+        height: 36%;
+        border-radius: 5px;
+    }
+    .gnScrValue1 h5{
+        font-size: 1.5rem;
+    }
+    .p1LostScore{
+        width: 20%;
+        height: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-left: 3px solid var(--player01Primary);
+        border-top: 3px solid var(--player01Primary);
+        border-bottom: 3px solid var(--player01Primary);
+        border-right: 0px;
+        border-radius: 5px 0px 0px 5px;
+        position: absolute;
+        left: 80%;
+        top: 15%;
+    }
+    .lstScrHd1{
+        width: 90%;
+        height: 50%;
+    }
+    .lstScrHd1 h5{
+        font-size: 0.9rem;
+    }
+    .lstScrHd1 h5 span{
+        font-size: 1.3rem;
+    }
+    .lstScrValue1{
+        width: 60%;
+        height: 36%;
+        border-radius: 5px;
+    }
+    .lstScrValue1 h5{
+        font-size: 1.5rem;
+    }
+
+    .player2Info{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 0px 0px 15px 15px;
+        background: linear-gradient(to top right, rgba(255, 255, 255, 0.4)40%, rgba(255, 255, 255, 0.2) 100%);
+    }
+    .p2GainScore{
+        width: 20%;
+        height: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-left: 0px;
+        border-right: 3px solid var(--player02Primary);
+        border-radius: 0px 5px 5px 0px;
+        position: absolute;
+        left: 0%;
+        top: 15%;
+    }
+    .gnScrHd2{
+        width: 90%;
+        height: 50%;
+    }
+    .gnScrHd2 h5{
+        font-size: 0.9rem;
+    }
+    .gnScrHd2 h5 span{
+        font-size: 1.3rem;
+    }
+    .gnScrValue2{
+        width: 60%;
+        height: 36%;
+        border-radius: 5px;
+    }
+    .gnScrValue2 h5{
+        font-size: 1.5rem;
+    }
+    .p2LostScore{
+        width: 20%;
+        height: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        top: 15%;
+    }
+    .lstScrHd2{
+        width: 90%;
+        height: 50%;
+    }
+    .lstScrHd2 h5{
+        font-size: 0.9rem;
+    }
+    .lstScrHd2 h5 span{
+        font-size: 1.3rem;
+    }
+    .lstScrValue2{
+        width: 60%;
+        height: 36%;
+        border-radius: 5px;
+    }
+    .lstScrValue2 h5{
+        font-size: 1.5rem;
+    }
+    
+    .name{
+        width: 60%;
+        height: 40%;
+    }
+    .name h1{
+        width: 100%;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+    .score{
+        height: 20%;
+    }
+    .score h2{
+        font-size: 2.6rem;
+    }
+    .currentScore{
+        height: 40%;
+    }
+    .crntScr{
+        width: 45%;
+        height: 70%;
+    }
+    .crntScr h3{
+        height: 30%;
+        font-size: 1.2rem;
+    }
+    .crntScr h4{
+        height: 40%;
+        font-size: 1.5rem;
+    }
+
+    .diceArea{
+        width: 95%;
+        height: 15%;
+        position: absolute;
+        top: 112%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+    }
+    .winScore{
+        display: none;
+    }
+
+
+    .diceImage{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        order: 2;
+    }
+    .diceImage .diceImg{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .diceImg img{
+        width: 65px;
+    }
+    
+    
+    .rollButton{
+        width: 30%;
+        height: 100%;
+        order: 1;
+    }
+    .rollBtn{
+        padding: 5px 15px;
+        font-size: 1.4rem;
+        border-radius: 4px;
+    }
+    .holdButton{
+        width: 30%;
+        height: 100%;
+        order: 3;
+    }
+    .holdBtn{
+        padding: 5px 12px;
+        font-size: 1.4rem;
+        border-radius: 4px;
+    }
+}
+
+/* ---------------- Smartphones Mobile Large ---------------- */
+@media(min-width: 376px) and (max-width: 500px) {
+    
+}
+
+/* ---------------- Tablet ---------------- */
+@media(min-width: 501px) and (max-width: 774px) {
+    
+}
+
+/* ---------------- Small Laptop ---------------- */
+@media(min-width: 775px) and (max-width: 992px) {
+    
+}
+
+/* ---------------- Medium Laptop ---------------- */
+@media(min-width: 993px) and (max-width: 1200px) {
+    
+}
+
+/* Widescreen OR Large Laptop*/
+@media(min-width: 1201px) {
+    
+}
+
+/* Landscape */
+/* @media(max-height: 500px) {
+body {
+    background: orange;
+}
+
+#landscape h1 {
+    display: block;
+}
+
+} */
