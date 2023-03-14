@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Dice</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- BoxIcons  -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="bgImage"></div>
+    <div id="main">
+        <div class="overlay hidden"></div>
+
+        <div class="Instructions hidden">
+            <button class="close"><i class="fa-solid fa-xmark"></i></button>
+            <h2>Instructions</h2>
+            <ul>
+                <li>Set the player names by click on <strong>Player 1</strong> & <strong>Player 2</strong>.</li>
+                <li>Roll the dice by <b>Roll button</b> and Starts the Game.</li>
+                <li>A player looses his entire score and your turn when the dice number comes <b>1</b>.</li>
+                <li>Press the <b>Hold button</b> and adds your current score successfully but your turn is gone.</li>
+                <li>The first player who will reached the 100 is the winner.</li>
+                <li>Game starts from player 1 by default.</li>
+            </ul>
+            <p>SO! lets enjoy the GAME</p>
+        </div>
+
+        <div class="congratulation hidden">
+            <div class="congrats">
+                <h1 class="congratsTxt">Congratulation</h1>
+                <h2 class="playerName"></h2>
+                <h3>You Won</h3>
+                <h4 class="thankBtn">Thanks</h4>
+            </div>
+        </div>
+
+        <div class="changeNameP1 hidden">
+            <h4>Player 1</h4>
+            <p>Change Name</p>
+            <input type="text" placeholder="Your Name" class="inputPlayer1">
+            <button class="okP1">OK</button>
+        </div>
+
+        <div class="changeNameP2 hidden">
+            <h4>Player 2</h4>
+            <p>Change Name</p>
+            <input type="text" placeholder="Your Name" class="inputPlayer2">
+            <button class="okP2">OK</button>
+        </div>
+
+        <div id="navigateBtns">
+            <!-- <div class="winnigScore">
+                <button class="winScr">New Game</button>
+            </div> -->
+            <div class="instructions-btn">
+                <button class="instruction">Instructions</button>
+            </div>
+        </div>
+
+        <div class="newgameButton">
+            <button class="newGameBtn">New Game</button>
+        </div>
+
+        <div id="gameArea">
+
+            <section class="player1Info active">
+
+                <div class="p1GainScore">
+                    <div class="gnScrHd1">
+                        <h5>Previous <span>Gain</span></h5>
+                    </div>
+                    <div class="gnScrValue1">
+                        <h5 class="p1GnScr">0</h5>
+                    </div>
+                </div>
+
+                <div class="p1LostScore">
+                    <div class="lstScrHd1">
+                        <h5>Previous <span>Lost</span></h5>
+                    </div>
+                    <div class="lstScrValue1">
+                        <h5 class="p1LstScr">0</h5>
+                    </div>
+                </div>
+
+                <div class="name p1Name">
+                    <h1 class="player1"></h1>
+                </div>
+
+                <div class="score p1Score">
+                    <h2 class="player1MainScr">0</h2>
+                </div>
+
+                <div class="currentScore">
+                    <div class="crntScr p1CrntScore">
+                        <h3>Current Score</h3>
+                        <h4 class="player1CrntScr">0</h4>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="player2Info">
+
+                <div class="p2GainScore">
+                    <div class="gnScrHd2">
+                        <h5>Previous <span>Gain</span></h5>
+                    </div>
+                    <div class="gnScrValue2">
+                        <h5 class="p2GnScr">0</h5>
+                    </div>
+                </div>
+                
+                <div class="p2LostScore">
+                    <div class="lstScrHd2">
+                        <h5>Previous <span>Lost</span></h5>
+                    </div>
+                    <div class="lstScrValue2">
+                        <h5 class="p2LstScr">0</h5>
+                    </div>
+                </div>
+
+                <div class="name p2Name">
+                    <h1 class="player2"></h1>
+                </div>
+
+                <div class="score p2Score">
+                    <h2 class="player2MainScr">0</h2>
+                </div>
+
+                <div class="currentScore">
+                    <div class="crntScr p2CrntScore">
+                        <h3>Current Score</h3>
+                        <h4 class="player2CrntScr">0</h4>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="diceArea">
+
+                <div class="winScore">
+                    <div class="wnSrText">
+                        <p>First To</p>
+                        <p>100</p>
+                    </div>
+                </div>
+
+                <div class="diceImage">
+                    <div class="diceImg">
+                        <img src="./Images/1.png" alt="" class="dice-Image hidden">
+                    </div>
+                </div>
+
+                <div class="rollButton">
+                    <button class="rollBtn">Roll</button>
+                </div>
+
+                <div class="holdButton">
+                    <button class="holdBtn">Hold</button>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>

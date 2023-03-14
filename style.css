@@ -1,0 +1,791 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Varela+Round&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --whiteColor: #ffffff;
+    --blackColor: #000000;
+    --primaryColor: #005495;
+    --primaryColor02: #25c6e5;
+    --SecondaryColor: #ca19d6;
+    --SecondaryColor02: #e59ce5;
+    --player01Primary: #ffa600;
+    --player01Secondary: #ffd17b;
+    --player02Primary: #00ff95;
+    --player02Secondary: #45e7a4;
+}
+#bgImage{
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;
+    background: url('./Images/background.avif');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+#main{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.Instructions{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    border-radius: 10px;
+    background-color: #000000;
+    border: 5px solid #ff306e;
+    color: var(--whiteColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.Instructions .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    border-radius: 0px 6px 0px 8px;
+    border: none;
+    font-size: 1.3rem;
+    background-color: var(--whiteColor);
+    font-weight: bold;
+    transition: 0.3s;
+}
+.Instructions .close:hover{
+    background-color: rgb(110, 110, 110);
+    color: var(--whiteColor);
+}
+.Instructions h2{
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ff306e;
+}
+.Instructions ul{
+    font-size: 0.92rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    margin-left: 30px;
+    line-height: 25px;
+}
+.Instructions p{
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ff306e;
+    font-weight: bold;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    z-index: 9;
+    background-color: #000000;
+}
+
+.congratulation{
+    height: 40%;
+    width: 35%;
+    position: absolute;
+    top: 30%;
+    background-color: var(--blackColor);
+    color: var(--whiteColor);
+    z-index: 15;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+.congratulation::before{
+    content: '';
+    position: absolute;
+    height: 220%;
+    width: 220%;
+    background: conic-gradient(#ff306e, #ff7c01, #cb00e6, #4bff5a, #1c51ff, #fff01a, #26ffed, #ff306e);
+    animation: rotatingBorder 4s infinite linear;
+}
+@keyframes rotatingBorder {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+.congrats{
+    height: 97%;
+    width: 98%;
+    position: absolute;
+    background-color: var(--blackColor);
+    color: var(--whiteColor);
+    z-index: 14;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+.congrats :nth-child(1){
+    font-size: 2.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+.congrats :nth-child(2){
+    font-size: 2.4rem;
+    font-family: 'Varela Round', sans-serif;
+}
+.congrats :nth-child(3){
+    font-size: 1.7rem;
+    font-family: 'Varela Round', sans-serif;
+}
+.congrats :nth-child(4){
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 2px 30px;
+    background-color: var(--SecondaryColor);
+    border-radius: 4px;
+    color: var(--whiteColor);
+    font-weight: 500;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.congrats :nth-child(4):hover{
+    transform: scale(1.05);
+}
+.congratsTxt{
+    color: #ff306e;
+    animation: colorChange 1s linear 0s infinite;
+}
+@keyframes colorChange {
+    0%{
+        color: #ff306e;
+        transform: scale(1);
+    }
+    20%{
+        color: #ff7c01;
+        transform: scale(1.1);
+    }
+    40%{
+        color: #cb00e6;
+        transform: scale(1.2);
+    }
+    60%{
+        color: #4bff5a;
+        transform: scale(1.2);
+    }
+    80%{
+        color: #26ffed;
+        transform: scale(1.1);
+    }
+    100%{
+        color: #fff01a;
+        transform: scale(1);
+    }
+}
+
+#navigateBtns{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 15px 0px 0px;
+}
+/* .winScr{
+    padding: 6px 20px;
+    border-radius: 8px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1rem;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    border: 4px solid var(--primaryColor02);
+    font-weight: bold;
+    transition: 0.2s linear;
+}
+.winScr:hover{
+    background-color: var(--primaryColor02);
+    color: var(--blackColor);
+    border: 4px solid var(--primaryColor);
+} */
+.instruction{
+    padding: 6px 26px;
+    border-radius: 8px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1rem;
+    background-color: var(--SecondaryColor);
+    color: var(--whiteColor);
+    border: 4px solid var(--SecondaryColor02);
+    font-weight: bold;
+    transition: 0.2s linear;
+}
+.instruction:hover{
+    background-color: var(--SecondaryColor02);
+    color: var(--blackColor);
+    border: 4px solid var(--SecondaryColor);
+}
+
+.changeNameP1{
+    height: 30%;
+    width: 25%;
+    position: absolute;
+    top: 20%;
+    background-color: var(--whiteColor);
+    z-index: 10;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.changeNameP1 :nth-child(1){
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+}
+.changeNameP1 :nth-child(2){
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+.changeNameP1 :nth-child(3){
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    width: 80%;
+}
+.changeNameP1 :nth-child(4){
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 2px 30px;
+    background-color: var(--player01Primary);
+    border-radius: 4px;
+    color: var(--whiteColor);
+    font-weight: 500;
+}
+
+.changeNameP2{
+    height: 30%;
+    width: 25%;
+    position: absolute;
+    top: 20%;
+    background-color: var(--whiteColor);
+    z-index: 10;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.changeNameP2 :nth-child(1){
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+}
+.changeNameP2 :nth-child(2){
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+.changeNameP2 :nth-child(3){
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    width: 80%;
+}
+.changeNameP2 :nth-child(4){
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 2px 30px;
+    background-color: var(--player02Primary);
+    border-radius: 4px;
+    color: var(--whiteColor);
+    font-weight: 500;
+}
+
+.newGameBtn{
+    padding: 5px 20px;
+    border-radius: 10px 10px 0px 0px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--whiteColor);
+    background-color: #ff4800;
+    border: 2px solid #ff8352;
+    transition: 0.2s;
+}
+.newGameBtn:hover{
+    color: var(--blackColor);
+    background-color: #ff8352;
+    border: 2px solid #ff4800;
+}
+
+#gameArea{
+    width: 66%;
+    height: 70%;
+    background-color: transparent;
+    display: flex;
+    position: relative;
+}
+.player1Info{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.4)40%, rgba(255, 255, 255, 0.2) 100%);
+    border-radius: 15px 0px 0px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+}
+.p1GainScore{
+    width: 20%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0);
+    border-right: 3px solid var(--player01Primary);
+    border-top: 3px solid var(--player01Primary);
+    border-bottom: 3px solid var(--player01Primary);
+    border-radius: 0px 5px 5px 0px;
+    position: absolute;
+    left: 0;
+    top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.gnScrHd1{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gnScrHd1 h5{
+    font-size: 1.1rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.gnScrHd1 h5 span{
+    font-size: 1.5rem;
+    color: var(--player01Primary);
+}
+.gnScrValue1{
+    width: 65%;
+    height: 30%;
+    background-color: var(--player01Primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.gnScrValue1 h5{
+    font-size: 2rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.p1LostScore{
+    width: 20%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0);
+    border-right: 3px solid var(--player01Primary);
+    border-top: 3px solid var(--player01Primary);
+    border-bottom: 3px solid var(--player01Primary);
+    border-radius: 0px 5px 5px 0px;
+    position: absolute;
+    left: 0;
+    top: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.lstScrHd1{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lstScrHd1 h5{
+    font-size: 1.1rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.lstScrHd1 h5 span{
+    font-size: 1.6rem;
+    color: var(--player01Primary);
+}
+.lstScrValue1{
+    width: 65%;
+    height: 30%;
+    background-color: var(--player01Primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.lstScrValue1 h5{
+    font-size: 2rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.p1Name h1{
+    color: var(--player01Primary);
+    cursor: pointer;
+}
+.p1Score h2{
+    color: var(--whiteColor);
+}
+.p1CrntScore{
+    background-color: var(--player01Primary);
+}
+.p1CrntScore h3, .p1CrntScore h4{
+    color: var(--blackColor);
+}
+
+.player2Info{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.4)40%, rgba(255, 255, 255, 0.2) 100%);
+    border-radius: 0px 15px 15px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+}
+.p2GainScore{
+    width: 20%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0);
+    border-left: 3px solid var(--player02Primary);
+    border-top: 3px solid var(--player02Primary);
+    border-bottom: 3px solid var(--player02Primary);
+    border-radius: 5px 0px 0px 5px;
+    position: absolute;
+    right: 0;
+    top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.gnScrHd2{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gnScrHd2 h5{
+    font-size: 1.1rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.gnScrHd2 h5 span{
+    font-size: 1.5rem;
+    color: var(--player02Primary);
+}
+.gnScrValue2{
+    width: 65%;
+    height: 30%;
+    background-color: var(--player02Primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.gnScrValue2 h5{
+    font-size: 2rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.p2LostScore{
+    width: 20%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0);
+    border-left: 3px solid var(--player02Primary);
+    border-top: 3px solid var(--player02Primary);
+    border-bottom: 3px solid var(--player02Primary);
+    border-radius: 5px 0px 0px 5px;
+    position: absolute;
+    right: 0;
+    top: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.lstScrHd2{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lstScrHd2 h5{
+    font-size: 1.1rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.lstScrHd2 h5 span{
+    font-size: 1.6rem;
+    color: var(--player02Primary);
+}
+.lstScrValue2{
+    width: 65%;
+    height: 30%;
+    background-color: var(--player02Primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.lstScrValue2 h5{
+    font-size: 2rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+.p2Name h1{
+    color: var(--player02Primary);
+    cursor: pointer;
+}
+.p2Score h2{
+    color: var(--whiteColor);
+}
+.p2CrntScore{
+    background-color: var(--player02Primary);
+}
+.p2CrntScore h3, .p2CrntScore h4{
+    color: var(--blackColor);
+}
+
+
+.name{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name h1{
+    width: 60%;
+    text-align: center;
+    font-size: 2.2rem;
+    font-family: 'Poppins', sans-serif;
+    line-height: 2.5rem;
+}
+.score{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.score h2{
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
+    line-height: 2.5rem;
+    font-weight: 500;
+}
+.currentScore{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.crntScr{
+    width: 46%;
+    height: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 10px;
+}
+.crntScr h3{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    font-size: 1.45rem;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+}
+.crntScr h4{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: 'Varela Round', sans-serif;
+}
+
+
+.diceArea{
+    width: 25%;
+    height: 75%;
+    position: absolute;
+    top: 12%;
+    left: 37.5%;
+}
+
+.winScore{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+}
+.winScore .wnSrText{
+    width: 50%;
+    height: 100%;
+    border: 2px dashed var(--primaryColor02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.wnSrText :nth-child(1){
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--whiteColor);
+    font-family: 'Varela Round', sans-serif;
+}
+.wnSrText :nth-child(2){
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primaryColor02);
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+}
+
+.diceImage{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.diceImage .diceImg{
+    width: 60%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.diceImg img{
+    width: 90px;
+}
+
+
+.rollButton{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.rollBtn{
+    padding: 8px 22px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    font-family: 'Varela Round', sans-serif;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    border: 3px solid var(--primaryColor02);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.rollBtn:hover{
+    background-color: var(--primaryColor02);
+    color: var(--blackColor);
+    border: 4px solid var(--primaryColor);
+}
+.holdButton{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.holdBtn{
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    font-family: 'Varela Round', sans-serif;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    border: 3px solid var(--primaryColor02);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.holdBtn:hover{
+    background-color: var(--primaryColor02);
+    color: var(--blackColor);
+    border: 4px solid var(--primaryColor);
+}
+
+.active{
+    opacity: 1;
+}
+.hidden{
+    display: none;
+}
+.animation{
+    animation: diceImage 0.6s linear 1 alternate;
+}
+@keyframes diceImage {
+    0%{
+        transform: scale(1);
+        rotate: 0deg;
+    }
+    50%{
+        transform: scale(1.4);
+        rotate: 360deg;
+    }
+    100%{
+        transform: scale(1);
+        rotate: 0deg;
+    }  
+}
